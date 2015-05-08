@@ -1,0 +1,9 @@
+---
+- name: Start Jenkins
+  service: name=jenkins state=started enabled=no
+
+- name: Wait for Jenkins to Start
+  wait_for:
+    host: "{{ jenkins_hostname }}"
+    port: 8080
+    timeout: 300

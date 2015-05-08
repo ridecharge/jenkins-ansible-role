@@ -1,0 +1,27 @@
+---
+galaxy_info:
+  author: Stephen Garlick
+  description: Ansible Role to Install Jenkins
+  company: Curb
+  license: license (Apache)
+  min_ansible_version: 1.2
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+  #categories:
+  #- cloud
+  #- cloud:ec2
+  #- cloud:gce
+  #- cloud:rax
+  #- clustering
+  #- database
+  #- database:nosql
+  #- database:sql
+  #- development
+  #- monitoring
+  #- networking
+  #- packaging
+  #- system
+  #- web
+dependencies: []

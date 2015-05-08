@@ -1,0 +1,5 @@
+---
+- include: 'package.yml'
+- include: 'start.yml'
+- include: 'config.yml'
+- include: 'plugins.yml'

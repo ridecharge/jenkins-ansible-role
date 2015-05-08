@@ -1,0 +1,13 @@
+---
+jenkins_hostname: localhost
+jenkins_jar_location: /opt/jenkins-cli.jar
+jenkins_plugins:
+- git
+
+jenkins_other_packages:
+- curl
+- git
+- build-essential
+
+jenkins_directories:
+- /var/lib/jenkins/updates

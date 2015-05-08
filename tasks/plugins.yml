@@ -1,0 +1,15 @@
+---
+- name: Download the Jenkins CLI jar
+  get_url:
+    url: "http://{{ jenkins_hostname }}:8080/jnlpJars/jenkins-cli.jar"
+    dest: "{{ jenkins_jar_location }}"
+  register: jarfile_get
+  until: "'OK' in jarfile_get.msg or 'file already exists' in jarfile_get.msg"
+  retries: 5
+  delay: 10
+
+- name: Install Jenkins Plugins
+  command: >
+    java -jar {{ jenkins_jar_location }} -s http://{{ jenkins_hostname }}:8080/ install-plugin {{ item }}
+    creates=/var/lib/jenkins/plugins/{{ item }}.jpi
+  with_items: jenkins_plugins
