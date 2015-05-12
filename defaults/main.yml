@@ -8,6 +8,7 @@ jenkins_other_packages:
 - curl
 - git
 - build-essential
+- gradle
 
 jenkins_directories:
 - /var/lib/jenkins/updates
