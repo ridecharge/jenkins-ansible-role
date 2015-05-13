@@ -3,9 +3,6 @@
   apt: name="{{ item }}" state=installed
   with_items: jenkins_other_packages
 
-- name: Install Docker
-  shell: curl -sSL https://get.docker.com/ubuntu/ | sh
-
 - apt_key: url='https://jenkins-ci.org/debian/jenkins-ci.org.key' state=present
 - apt_repository: repo='deb http://pkg.jenkins-ci.org/debian binary/' state=present
 - name: Install Jenkins
