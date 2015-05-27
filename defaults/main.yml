@@ -3,6 +3,7 @@ jenkins_hostname: localhost
 jenkins_jar_location: /opt/jenkins-cli.jar
 jenkins_plugins:
 - git
+- gradle
 
 jenkins_other_packages:
 - curl
