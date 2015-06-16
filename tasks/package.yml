@@ -1,4 +1,11 @@
 ---
+- apt_repository: repo='ppa:cwchien/gradle' state=present
+- apt_key: url='https://jenkins-ci.org/debian/jenkins-ci.org.key' state=present
+- apt_repository: repo='deb http://pkg.jenkins-ci.org/debian binary/' state=present
+
+- name: get apt up to date
+  apt: upgrade=dist update_cache=yes
+
 - name: Install packages
   apt: name="{{ item }}" state=installed
   with_items: jenkins_other_packages
@@ -6,7 +13,5 @@
 - name: Install Docker
   shell: curl -sSL https://get.docker.com/ubuntu/ | sh
 
-- apt_key: url='https://jenkins-ci.org/debian/jenkins-ci.org.key' state=present
-- apt_repository: repo='deb http://pkg.jenkins-ci.org/debian binary/' state=present
 - name: Install Jenkins
   apt: pkg=jenkins state=installed
